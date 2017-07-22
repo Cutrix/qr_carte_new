@@ -29,4 +29,8 @@ class Client extends easymysql{
         return $this->countFromMysql('client');
     }
 
+    public function getAll() {
+        return $this->getFromMysql('client');
+    }
+
 }

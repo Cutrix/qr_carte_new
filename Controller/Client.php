@@ -74,8 +74,8 @@ class Client {
     }
 
     public function getAll() {
-        $postss = $this->model->getAll();
-        $this->util->clients = $postss;
+        $clients = $this->model->getAll();
+        $this->util->clients = $clients;
         $this->util->getView('clients');
     }
 

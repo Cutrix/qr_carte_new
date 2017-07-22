@@ -68,7 +68,7 @@ class Inscription {
             $this->util->getView('inscription_client');
         }
         
-        public function add_chauffeur() {
+        public function delete() {
             
         }
 }
