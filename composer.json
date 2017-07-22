@@ -1,0 +1,17 @@
+{
+    "name": "cutrix/qr_crte",
+    "authors": [
+        {
+            "name": "Cutrix",
+            "email": "houessinonlandry@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Engine\\":"Engine/",
+            "Model\\":"Model/",
+            "Controller\\":"Controller/"
+        }
+    },
+    "require": {}
+}
