@@ -9,9 +9,9 @@ class Inscription {
 
 	public function __construct() {
             $this->util = new \Engine\Util;
-            $this->util->getModel('Inscription');
+            $this->util->getModel('Client');
             
-            $this->model = new \Model\Inscription;
+            $this->model = new \Model\Client;
             
             $this->_id = (int) (!empty($_GET['id']) ? $_GET['p'] : 0);
         }
@@ -69,6 +69,8 @@ class Inscription {
         }
         
         public function delete() {
-            
+            if($this->model->delete($this->_id)) {
+                $this->util->succ = 1;
+            }
         }
 }

@@ -19,7 +19,7 @@
         <p><strong>Inscrit le: </strong><?= $client->date_inscription; ?></p>
         <center><img src="<?= $client->qr; ?>" alt="" class="img-thumbnail"></center>
         <button type="button" class="btn btn-success" onclick="window.location='<?=ROOT_URL?>?p=Client&amp;a=delete&amp;id=<?= $client->id_client; ?>'">Supprimer</button>
-        <button type="button" class="btn btn-warning">Modifier</button>
+        <button type="button" class="btn btn-warning" onclick="window.location='<?=ROOT_URL?>?p=Client&amp;a=update&amp;id=<?= $client->id_client; ?>'">Modifier</button>
     </div></center><br><hr>
 <?php endforeach; ?>
 

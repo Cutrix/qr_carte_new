@@ -74,11 +74,11 @@ class easymysql {
         if (empty($arg)) {            
             $q = $this->db->prepare(self::EVERYTHING_SELECTOR.$table.' WHERE '.$this->walk($options, "=?, ").'=?');
             $q->execute(array($this->walk($values)));
-            return $q->fetchAll($fetch);
+            return $q->fetch($fetch);
         }
         $q = $this->db->prepare('SELECT '.$this->walk($arg).' FROM '.$table.' WHERE '.$this->walk($options, "=?, ").'=?');
         $q->execute(array($this->walk($values)));
-        return $q->fetchAll($fetch);
+        return $q->fetch($fetch);
     }
     
     /**

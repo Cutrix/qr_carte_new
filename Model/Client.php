@@ -33,4 +33,20 @@ class Client extends easymysql{
         return $this->getFromMysql('client');
     }
 
+    public function delete(int $id) {
+        @unlink($this->getPathQr($id));
+        $this->deleteFromMysql('client', 'id_client', $id);
+        return true;
+    }
+
+    public function get(int $id) {
+        return $this->getFromMysqlOptions('client', ['id_client'], [$id]);
+    }
+
+    private function getPathQr(int $id) {
+        $q = $this->db->prepare("SELECT Qr FROM client WHERE id_client = ?");
+        $q->execute(array($id));
+        return $q->fetch();
+   }
+
 }
